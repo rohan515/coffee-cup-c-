@@ -1,0 +1,52 @@
+using System;
+
+    class Program
+    {
+        static void Main()
+        {
+            int totalprice = 0;
+            start:
+            Console.WriteLine("select coffie 1 =small, 2= normal 3=large");
+          int usernum =int.Parse(Console.ReadLine());
+            switch (usernum)
+            { 
+                case 1:
+
+                    totalprice += 1;
+                   
+                    break;
+                case 2:
+
+                    totalprice += 2;
+                  
+                    break;
+                case 3:
+
+                    totalprice += 3;
+                  
+                    break;
+                default:
+                    Console.WriteLine("invalid selection");
+                    Console.ReadLine();
+                   goto start;
+
+            }
+            decide:
+            Console.WriteLine("you need another cup? yes or no");
+            String xxx = Console.ReadLine();
+            switch (xxx)
+            { 
+                case "yes":
+                    goto start;
+                case "no":
+                    break;
+                default:
+                    Console.WriteLine("invalid selection");
+                    goto decide;
+
+            }
+            Console.WriteLine("total bill = {0}", totalprice * 100);
+            Console.ReadLine();
+        }
+    }
+
